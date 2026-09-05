@@ -756,5 +756,56 @@
   });
 })();
 </script>
+<style id="shareCoverAndRevealStyle">
+  .share-cover{position:relative;z-index:2;min-height:100svh;padding:66px 20px 48px;background:linear-gradient(155deg,#fffafa 0%,#f7e5e7 100%)}
+  .share-cover-card{overflow:hidden;border-radius:26px;background:#fff;box-shadow:0 18px 46px rgba(110,67,76,.18)}
+  .share-cover-photo{aspect-ratio:1.04/1;overflow:hidden;background:#f3dfe2}
+  .share-cover-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 53%;display:block}
+  .share-cover-copy{padding:25px 22px 24px;text-align:center}
+  .share-cover-copy h1{margin:0;color:var(--deep);font:700 27px/1.35 "Nanum Myeongjo","Noto Serif KR",serif;letter-spacing:-.055em}
+  .share-cover-copy h1 .heart{display:inline-block;margin:0 .12em;color:#c87a8b;font:400 1.03em/1 Georgia,serif;vertical-align:.02em}
+  .share-cover-copy p{margin:13px 0 0;color:#715d60;font:400 16px/1.65 "Nanum Myeongjo","Noto Serif KR",serif;letter-spacing:-.045em}
+  .share-cover-place{margin-top:2px!important;color:#8b6a70!important}
+  .share-cover-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+  .share-cover-actions a{display:flex;align-items:center;justify-content:center;min-height:51px;border:1px solid #ecd7da;border-radius:13px;background:#faf5f5;color:var(--deep);font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 3px 10px rgba(119,75,84,.06)}
+  .share-cover-actions a:active{transform:translateY(1px);background:#f4e4e6}
+  .share-cover-mark{margin:19px 0 0;color:#aa858b;font:11px/1.5 Georgia,"Nanum Myeongjo",serif;letter-spacing:.1em;text-align:center}
+  .scroll-reveal{opacity:0;transform:translateY(26px);transition:opacity .68s ease,transform .68s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
+  .scroll-reveal.scroll-revealed{opacity:1;transform:translateY(0)}
+  .page.scroll-reveal{min-height:auto;margin-bottom:4px}
+  @media(max-width:390px){.share-cover{padding-left:16px;padding-right:16px}.share-cover-copy h1{font-size:24px}.share-cover-copy p{font-size:15px}.share-cover-actions a{font-size:14px}}
+</style>
+<script>
+(() => {
+  const invite = document.querySelector('#invitation');
+  const naverUrl = 'https://map.naver.com/p/search/' + encodeURIComponent('라온웨딩홀 부산 서면');
+  if (invite && !document.querySelector('#shareCover')) {
+    const cover = document.createElement('article');
+    cover.id = 'shareCover';
+    cover.className = 'share-cover';
+    cover.innerHTML = '<section class="share-cover-card">'
+      + '<div class="share-cover-photo"><img src="invitation-images/e36863d2c6c54692.jpg" alt="심명보와 장은정의 웨딩 사진"></div>'
+      + '<div class="share-cover-copy"><h1>심명보 <span class="heart" aria-hidden="true">♥</span> 장은정 결혼합니다</h1>'
+      + '<p>2026년 10월 25일 일요일 낮 12시</p><p class="share-cover-place">라온웨딩홀 (ABL부산타워 23층)</p>'
+      + '<div class="share-cover-actions"><a href="#invitation">청첩장 보기</a><a href="' + naverUrl + '" target="_blank" rel="noopener">위치 보기</a></div>'
+      + '</div></section><p class="share-cover-mark">SIM MYEONGBO &amp; JANG EUNJEONG</p>';
+    invite.parentNode.insertBefore(cover, invite);
+  }
+
+  const targets = [...document.querySelectorAll('.page, .photo-card, .autumn-poem, .info, .map-wrap, .route-card, .gallery-frame, .account, .contact-grid, .share-cover')];
+  targets.forEach((target, index) => {
+    target.classList.remove('is-risen');
+    target.classList.add('scroll-reveal');
+    target.style.transitionDelay = Math.min(index % 4, 3) * 55 + 'ms';
+  });
+  const show = target => target.classList.add('scroll-revealed');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { show(entry.target); observer.unobserve(entry.target); }
+    }), { threshold: .11 });
+    targets.forEach(target => observer.observe(target));
+  } else targets.forEach(show);
+})();
+</script>
 </body>
 </html>
