@@ -358,7 +358,7 @@
 
   // The memorial flower is an actual transparent image, so the invitation pink shows through it.
   const memorial = document.querySelector('.memorial-flower');
-  if (memorial) memorial.outerHTML = '<img class="memorial-flower-image" src="invitation-images/memorial-flower-outline.png" alt="국화">';
+  if (memorial) memorial.outerHTML = '<img class="memorial-flower-image" src="invitation-images/memorial-flower-watermark-free.png" alt="국화">';
 
   // The number, rather than a call button, is the tappable control: it copies the contact.
   const copyText = async text => {
@@ -825,11 +825,11 @@ body{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif
 </style>
 <style id="memorialFlowerScale">
 .autumn-poem .family-vertical .memorial-flower-image{
-  width:54px!important;height:54px!important;
+  width:auto!important;height:54px!important;object-fit:contain!important;
   margin:0 -5px 0 -2px!important;vertical-align:-20px!important;
 }
 @media (max-width:360px){
-  .autumn-poem .family-vertical .memorial-flower-image{width:54px!important;height:54px!important}
+  .autumn-poem .family-vertical .memorial-flower-image{width:auto!important;height:54px!important}
 }
 </style>
 <script id="shareCopyCleanup">
