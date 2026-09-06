@@ -752,6 +752,27 @@
 })();
 </script>
 <style id="shareCopyCleanupStyle">.topnav::after{display:none!important;content:none!important}@media(max-width:480px){.autumn-poem .family-vertical .family-line .family-side-name,.autumn-poem .family-vertical .family-line strong{font-size:13px!important;font-weight:900!important}}</style>
+<style id="iosFamilyCopyFix">
+@media (max-width:480px){
+  .autumn-poem .family-vertical{padding-left:0!important;padding-right:0!important}
+  .autumn-poem .family-vertical .family-line{
+    box-sizing:border-box!important;width:100%!important;max-width:100%!important;
+    padding:15px 0!important;text-align:center!important;white-space:nowrap!important;
+    font-size:clamp(10px,2.86vw,12px)!important;line-height:1.8!important;
+    letter-spacing:-.075em!important;
+  }
+  .autumn-poem .family-vertical .family-line .family-side-name,
+  .autumn-poem .family-vertical .family-line strong{
+    font-size:inherit!important;font-weight:900!important;
+  }
+  .autumn-poem .family-vertical .family-line .memorial-flower-image{
+    width:12px!important;height:12px!important;margin:0 1px 0 0!important;vertical-align:-1px!important;
+  }
+}
+@media (max-width:360px){
+  .autumn-poem .family-vertical .family-line{font-size:10px!important;letter-spacing:-.09em!important}
+}
+</style>
 <script id="shareCopyCleanup">
 (() => {
   document.getElementById('heroLink')?.remove();
