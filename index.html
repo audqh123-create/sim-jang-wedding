@@ -773,6 +773,25 @@
   .autumn-poem .family-vertical .family-line{font-size:10px!important;letter-spacing:-.09em!important}
 }
 </style>
+<style id="mobileCrossBrowserTypography">
+/* Safari may enlarge Korean text automatically. Keep the same CSS scale on iPhone and Galaxy. */
+html,body,button,input,textarea,select{
+  -webkit-text-size-adjust:100%!important;
+  text-size-adjust:100%!important;
+  font-synthesis:none;
+}
+body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+@media (max-width:480px){
+  .page{padding-left:18px!important;padding-right:18px!important}
+  .info,.route-card{padding:18px 16px!important}
+  .info h3,.route-card h3{font-size:15px!important;line-height:1.45!important}
+  .info p{font-size:14px!important;line-height:1.82!important;letter-spacing:-.045em!important;word-break:keep-all!important;overflow-wrap:break-word!important}
+  .route-card p{font-size:13px!important;line-height:1.78!important;letter-spacing:-.045em!important;word-break:keep-all!important;overflow-wrap:break-word!important}
+  .map-label{font-size:13px!important;line-height:1.45!important}
+  .nav-links{gap:7px!important}
+  .nav-link{min-width:0!important;padding:12px 4px!important;font-size:11px!important;white-space:nowrap!important}
+}
+</style>
 <script id="shareCopyCleanup">
 (() => {
   document.getElementById('heroLink')?.remove();
