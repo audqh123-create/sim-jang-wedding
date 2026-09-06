@@ -837,8 +837,12 @@ body{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif
 </style>
 <style id="forceLightInvitation">
   /* QR로 열어도 브라우저의 다크 모드가 청첩장 색상을 바꾸지 않도록 고정합니다. */
-  :root,html,body{color-scheme:light only!important;background:#f8eff0!important}
+  :root,html,body{color-scheme:only light!important;background:#f8eff0!important}
   .app{background:radial-gradient(circle at 90% 3%,#fff7f7,transparent 24%),#fffafa!important}
+  @media (prefers-color-scheme:dark){
+    :root,html,body{color-scheme:only light!important;background:#f8eff0!important;color:#3a3032!important}
+    .app{background:radial-gradient(circle at 90% 3%,#fff7f7,transparent 24%),#fffafa!important}
+  }
 </style>
 <script id="shareCopyCleanup">
 (() => {
