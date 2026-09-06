@@ -746,11 +746,11 @@
 (() => {
   const lines = [...document.querySelectorAll('.autumn-poem .family-vertical .family-line')];
   if (lines[0]) {
-    lines[0].innerHTML = '<span class="family-side-name">신랑</span> <strong>심재민</strong> · <strong>유희선</strong>의 아들 <strong>심명보</strong>';
+    lines[0].innerHTML = '<strong>심재민</strong> · <strong>유희선</strong>의 아들 <strong>심명보</strong>';
   }
   if (lines[1]) {
     const flower = document.querySelector('.memorial-flower-image')?.outerHTML || '✿';
-    lines[1].innerHTML = '<span class="family-side-name">신부</span> <strong>장국진</strong> · ' + flower + '<strong>김영자</strong>의 딸 <strong>장은정</strong>';
+    lines[1].innerHTML = '<strong>장국진</strong> · ' + flower + '<strong>김영자</strong>의 딸 <strong>장은정</strong>';
   }
 })();
 </script>
@@ -825,11 +825,11 @@ body{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif
 </style>
 <style id="memorialFlowerScale">
 .autumn-poem .family-vertical .memorial-flower-image{
-  width:27px!important;height:27px!important;
-  margin:0 -2px 0 0!important;vertical-align:-8px!important;
+  width:54px!important;height:54px!important;
+  margin:0 -5px 0 -2px!important;vertical-align:-20px!important;
 }
 @media (max-width:360px){
-  .autumn-poem .family-vertical .memorial-flower-image{width:27px!important;height:27px!important}
+  .autumn-poem .family-vertical .memorial-flower-image{width:54px!important;height:54px!important}
 }
 </style>
 <script id="shareCopyCleanup">
