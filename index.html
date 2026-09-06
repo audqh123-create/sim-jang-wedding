@@ -798,5 +798,14 @@
   else image.addEventListener('load', () => setTimeout(reveal, 120), { once:true });
 })();
 </script>
+<script id="galleryFourPhotoScript">
+(() => {
+  const fourthPhoto = document.querySelectorAll('#gallerySlider figure img')[3];
+  if (fourthPhoto) {
+    fourthPhoto.src = 'invitation-images/gallery-04-stairs.jpg';
+    fourthPhoto.alt = '우리의 순간 사진 4';
+  }
+})();
+</script>
 </body>
 </html>
