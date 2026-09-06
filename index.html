@@ -798,6 +798,25 @@
   else image.addEventListener('load', () => setTimeout(reveal, 120), { once:true });
 })();
 </script>
+<script id="galleryThreePhotoAndBusScript">
+(() => {
+  const thirdPhoto = document.querySelectorAll('#gallerySlider figure img')[2];
+  if (thirdPhoto) {
+    thirdPhoto.src = 'invitation-images/gallery-03-candle.jpg?v=20260906';
+    thirdPhoto.alt = '우리의 순간 사진 3';
+  }
+
+  const busCard = [...document.querySelectorAll('.route-card')].find((card) =>
+    card.querySelector('h3')?.textContent.includes('버스')
+  );
+  if (busCard) {
+    busCard.querySelector('p').innerHTML =
+      '범내골 | 17 · 43 · 57 · 63 · 81 · 83 · 83-1 · 86 · 103 · 111 · 100번<br>' +
+      '상공회의소 | 10 · 29 · 38 · 82 · 88 · 99번<br>' +
+      '혜화사관학원 | 23 · 67 · 68 · 85 · 108 · 138번';
+  }
+})();
+</script>
 <script id="galleryFourPhotoScript">
 (() => {
   const fourthPhoto = document.querySelectorAll('#gallerySlider figure img')[3];
